@@ -1,10 +1,9 @@
 import  socket 
 
-# This will get the local IP address (e.g., 192.168.x.x or 10.x.x.x)
 def get_local_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
-        # connect to a dummy address; the connection won't actually be made
+        
         s.connect(('8.8.8.8', 80))  # Google DNS
         ip = s.getsockname()[0]
     except Exception:
